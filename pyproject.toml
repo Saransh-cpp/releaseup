@@ -56,16 +56,22 @@ Homepage = "https://github.com/Saransh-cpp/ReleaseIt"
 "Bug Tracker" = "https://github.com/Saransh-cpp/ReleaseIt/issues"
 Discussions = "https://github.com/Saransh-cpp/ReleaseIt/discussions"
 Changelog = "https://github.com/Saransh-cpp/ReleaseIt/releases"
+
+
 [tool.hatch]
 version.source = "vcs"
-version.path = "src/reeaseit/version.py"
+build.hooks.vcs.version-file = "src/releaseit/version.py"
 
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
 xfail_strict = true
-filterwarnings = ["error"]
+filterwarnings = [
+  "error",
+  "ignore::DeprecationWarning",
+  "ignore::UserWarning",
+]
 log_cli_level = "INFO"
 testpaths = [
   "tests",
