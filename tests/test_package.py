@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import ReleaseIt as m
+import releaseit as m
 
 
 def test_version():

@@ -7,6 +7,11 @@ ReleaseIt: Automatically generate release notes!
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
-
-__all__ = ("__version__",)
+from releaseit.extract import (  # noqa: F401
+    extract_additions,
+    get_comments_and_docstrings,
+    get_diff,
+    preprocess_additions,
+    save,
+)
+from releaseit.version import version as __version__  # noqa: F401

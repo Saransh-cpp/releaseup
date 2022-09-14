@@ -1,10 +1,13 @@
 [build-system]
-requires = ["hatchling"]
+requires = [
+  "hatchling",
+  "hatch-vcs",
+]
 build-backend = "hatchling.build"
 
 
 [project]
-name = "ReleaseIt"
+name = "releaseit"
 authors = [
   { name = "Saransh Chopra", email = "saransh0701@gmail.com" },
 ]
@@ -54,11 +57,8 @@ Homepage = "https://github.com/Saransh-cpp/ReleaseIt"
 Discussions = "https://github.com/Saransh-cpp/ReleaseIt/discussions"
 Changelog = "https://github.com/Saransh-cpp/ReleaseIt/releases"
 [tool.hatch]
-version.path = "src/ReleaseIt/__init__.py"
-envs.default.dependencies = [
-  "pytest",
-  "pytest-cov",
-]
+version.source = "vcs"
+version.path = "src/reeaseit/version.py"
 
 
 [tool.pytest.ini_options]
@@ -88,7 +88,7 @@ profile = "black"
 
 [tool.pylint]
 master.py-version = "3.7"
-master.ignore-paths= ["src/ReleaseIt/_version.py"]
+master.ignore-paths= ["src/releaseit/_version.py"]
 reports.output-format = "colorized"
 similarities.ignore-imports = "yes"
 messages_control.disable = [
