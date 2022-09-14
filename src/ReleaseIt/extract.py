@@ -1,19 +1,21 @@
+from __future__ import annotations
+
 import subprocess
 
 
-def get_diff(commits, path, filename):
+def get_diff(commits: list[str], path: str, filename: str) -> None:
     subprocess.run(["git", "diff", commits[0], commits[1], path, ">", filename])
 
 
-def extract_additions(filename):
-    with open(filename, "r") as f:
+def extract_additions(filename: str) -> list[str]:
+    with open(filename) as f:
         lines = f.readlines()
         extracted_additions = [line for line in lines if line[0] == "+"]
 
     return extracted_additions
 
 
-def preprocess_additions(extracted_additions):
+def preprocess_additions(extracted_additions: list[str]) -> list[str]:
     preprocessed_additions = extracted_additions.copy()
     for line in preprocessed_additions:
         if line[:3] == "+++":
@@ -25,7 +27,7 @@ def preprocess_additions(extracted_additions):
     return preprocessed_additions
 
 
-def get_comments_and_docstrings(preprocessed_additions):
+def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
     comments_and_docstrings = [
         line[line.find("#") + 1 :].replace("\n", "").strip()
         for line in preprocessed_additions
@@ -45,7 +47,7 @@ def get_comments_and_docstrings(preprocessed_additions):
     return [f"{x.strip()}\n" for x in comments_and_docstrings]
 
 
-def save(content, filename):
+def save(content: list[str], filename: str) -> None:
     with open(filename, "w") as f:
         f.write("".join(content))
 
