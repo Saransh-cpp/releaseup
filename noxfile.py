@@ -49,22 +49,19 @@ def coverage(session: nox.Session) -> None:
     tests(session)
 
 
-@nox.session
+@nox.session()
 def docs(session: nox.Session) -> None:
-    """
-    Build the docs. Pass "serve" to serve.
-    """
-
-    session.install(".[docs]")
-    session.chdir("docs")
-    session.run("sphinx-build", "-M", "html", ".", "_build")
+    """Build the docs. Pass "serve" to serve."""
+    session.install("-e", ".[docs]")
 
     if session.posargs:
         if "serve" in session.posargs:
             print("Launching docs at http://localhost:8000/ - use Ctrl-C to quit")
-            session.run("python", "-m", "http.server", "8000", "-d", "_build/html")
+            session.run("mkdocs", "serve")
         else:
-            session.warn("Unsupported argument to docs")
+            print("Unsupported argument to docs")
+    else:
+        session.run("mkdocs", "build")
 
 
 @nox.session
