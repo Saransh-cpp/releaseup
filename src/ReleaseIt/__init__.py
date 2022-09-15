@@ -7,11 +7,6 @@ ReleaseIt: Automatically generate release notes!
 
 from __future__ import annotations
 
-from releaseit.extract import (  # noqa: F401
-    extract_additions,
-    get_comments_and_docstrings,
-    get_diff,
-    preprocess_additions,
-    save,
-)
+from releaseit import extract  # noqa: F401
+from releaseit.high_level import extract_release_comments  # noqa: F401
 from releaseit.version import version as __version__  # noqa: F401

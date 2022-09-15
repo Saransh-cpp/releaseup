@@ -3,11 +3,31 @@ from __future__ import annotations
 import subprocess
 
 
-def get_diff(commits: list[str], path: str, filename: str) -> None:
-    subprocess.run(["git", "diff", commits[0], commits[1], path, ">", filename])
+def get_diff(
+    commits: list[str], path: str = "./", output_filename: str = "diff.txt"
+) -> None:
+    """
+    Writes `git diff` to a file.
+
+    Args:
+        commits: A list of commits (ideally 2 most recent) to find diff between.
+        path: Path of the sub-directory to find the diff of.
+        output_filename: Path of the file to store the diff in.
+    """
+    with open(output_filename, "w+") as f:
+        subprocess.run(["git", "diff", commits[0], commits[1], "--", path], stdout=f)
 
 
 def extract_additions(filename: str) -> list[str]:
+    """
+    Extracts all the additions made to a codebase from a file containing `git diff`.
+
+    Args:
+        filename: File containing the `git diff`.
+
+    Returns:
+        extracted_additions: A list of additions made to the codebase.
+    """
     with open(filename) as f:
         lines = f.readlines()
         extracted_additions = [line for line in lines if line[0] == "+"]
@@ -16,6 +36,15 @@ def extract_additions(filename: str) -> list[str]:
 
 
 def preprocess_additions(extracted_additions: list[str]) -> list[str]:
+    """
+    Preprocesses the extracted additions from `git diff`.
+
+    Args:
+        extracted_additions: A `git diff` containing only the additions.
+
+    Returns:
+        preprocessed_additions: Preprocessed additions.
+    """
     preprocessed_additions = extracted_additions.copy()
     for line in preprocessed_additions:
         if line[:3] == "+++":
@@ -28,6 +57,15 @@ def preprocess_additions(extracted_additions: list[str]) -> list[str]:
 
 
 def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
+    """
+    Extracts comments and docstrings from preprocessed `git diff` output.
+
+    Args:
+        preprocessed_additions: A list of preprocessed additions from `git diff`.
+
+    Returns:
+        docs: Extracted comments and docstrings from the preprocessed_additions.
+    """
     comments_and_docstrings = [
         line[line.find("#") + 1 :].replace("\n", "").strip()
         for line in preprocessed_additions
@@ -48,12 +86,12 @@ def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
 
 
 def save(content: list[str], filename: str) -> None:
-    with open(filename, "w") as f:
+    """
+    Save contents in a file.
+
+    Args:
+        content: A list of contents to be saved.
+        filename: Path of the file in which the contents have to be saved
+    """
+    with open(filename, "w+") as f:
         f.write("".join(content))
-
-
-# if __name__ == "__main__":
-#     extracted_additions = extract_additions("diff.txt")
-#     preprocessed_additions = preprocess_additions(extracted_additions)
-#     comments_and_docstrings = get_comments_and_docstrings(preprocessed_additions)
-#     save(comments_and_docstrings, "docs.txt")
