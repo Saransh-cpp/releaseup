@@ -34,7 +34,7 @@ dynamic = ["version"]
 dependencies = [
   "typing_extensions >=3.7; python_version<'3.8'",
   "spacy>=3.4.1",
-  "scikit-learn>=1.1.2"
+  "scikit-learn>=1.0"
 ]
 
 [project.optional-dependencies]
