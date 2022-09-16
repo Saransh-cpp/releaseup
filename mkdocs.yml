@@ -38,7 +38,7 @@ edit_uri: ./edit/main/docs
 extra_css:
   - stylesheets/extra.css
 
-strict: true
+# strict: true
 
 plugins:
   - search
