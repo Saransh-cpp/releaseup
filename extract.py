@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import subprocess
+import sys
 
 
 def get_diff(
@@ -53,6 +54,7 @@ def preprocess_additions(extracted_additions: list[str]) -> list[str]:
             Preprocessed additions.
     """
     preprocessed_additions = extracted_additions.copy()
+    preprocessed_additions = [f"{line.strip()}\n" for line in preprocessed_additions]
     for line in preprocessed_additions:
         if line[:3] == "+++":
             preprocessed_additions.pop(preprocessed_additions.index(line))
@@ -72,7 +74,7 @@ def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
             A list of preprocessed additions from `git diff`.
 
     Returns:
-        docs:
+        extracted_docs:
             Extracted comments and docstrings from the preprocessed_additions.
     """
     comments_and_docstrings = [
@@ -85,13 +87,31 @@ def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
 
     while i < len(lines):
         if lines[i : i + 3] == '"""':
-            idx = lines[i + 3 :].find('"""')
-            comments_and_docstrings.append(lines[i + 3 : i + idx + 3])
-            i += idx + 6
+            idx_next_quotes = lines[i + 3 :].find('"""')
+            # args = lines[i + 3 :].find('Args:') if lines[i + 3 :].find('Args:') != -1 else sys.maxsize
+            # returns = lines[i + 3 :].find('Returns:') if lines[i + 3 :].find('Returns:') != -1 else sys.maxsize
+            # examples = lines[i + 3 :].find('Examples:') if lines[i + 3 :].find('Examples:') != -1 else sys.maxsize
+            # idx = min(args, returns, examples)
+            # if idx != sys.maxsize:
+            comments_and_docstrings.append(lines[i + 3 : i + idx_next_quotes + 3])
+            i += idx_next_quotes + 6
             continue
         i += 1
 
-    return [f"{x.strip()}\n" for x in comments_and_docstrings]
+    extracted_docs = [x.strip() for x in comments_and_docstrings]
+    extracted_docs = [doc.replace("\n", "").replace("\t", "") for doc in extracted_docs]
+    extracted_docs = [f"{x.strip()}\n" for x in comments_and_docstrings]
+
+    i = 0
+    while i < len(extracted_docs):
+        line = extracted_docs[i]
+        if "noqa" in line or "type:" in line or line == "\n" or "todo" in line.lower():
+            print(line)
+            extracted_docs.pop(i)
+        else:
+            i += 1
+
+    return extracted_docs
 
 
 def save(content: list[str], filename: str) -> None:
