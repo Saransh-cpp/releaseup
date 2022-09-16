@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import releaseit
+import release_it
 
 
 def test_version():
-    assert releaseit.__version__
+    assert release_it.__version__

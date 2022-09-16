@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 
 
 [project]
-name = "releaseit"
+name = "release_it"
 authors = [
   { name = "Saransh Chopra", email = "saransh0701@gmail.com" },
 ]
@@ -62,15 +62,15 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Saransh-cpp/releaseit"
-"Bug Tracker" = "https://github.com/Saransh-cpp/releaseit/issues"
-Discussions = "https://github.com/Saransh-cpp/releaseit/discussions"
-Changelog = "https://github.com/Saransh-cpp/releaseit/releases"
+Homepage = "https://github.com/Saransh-cpp/release_it"
+"Bug Tracker" = "https://github.com/Saransh-cpp/release_it/issues"
+Discussions = "https://github.com/Saransh-cpp/release_it/discussions"
+Changelog = "https://github.com/Saransh-cpp/release_it/releases"
 
 
 [tool.hatch]
 version.source = "vcs"
-build.hooks.vcs.version-file = "src/releaseit/version.py"
+build.hooks.vcs.version-file = "src/release_it/version.py"
 
 
 [tool.pytest.ini_options]
@@ -105,7 +105,7 @@ profile = "black"
 
 [tool.pylint]
 master.py-version = "3.7"
-master.ignore-paths= ["src/releaseit/_version.py"]
+master.ignore-paths= ["src/release_it/_version.py"]
 reports.output-format = "colorized"
 similarities.ignore-imports = "yes"
 messages_control.disable = [

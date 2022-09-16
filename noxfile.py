@@ -36,7 +36,7 @@ def coverage(session: nox.Session) -> None:
     Run tests and compute coverage.
     """
 
-    session.posargs.append("--cov=releaseit")
+    session.posargs.append("--cov=release_it")
     tests(session)
 
 

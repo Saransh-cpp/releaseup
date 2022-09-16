@@ -1,7 +1,7 @@
 ## High Level API
 
-::: releaseit.high_level
+::: release_it.high_level
 
 ## Low Level API
 
-::: releaseit.extract
+::: release_it.extract
