@@ -33,6 +33,8 @@ classifiers = [
 dynamic = ["version"]
 dependencies = [
   "typing_extensions >=3.7; python_version<'3.8'",
+  "spacy>=3.4.1",
+  "scikit-learn>=1.1.2"
 ]
 
 [project.optional-dependencies]
@@ -90,6 +92,7 @@ strict = true
 show_error_codes = true
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 warn_unreachable = true
+ignore_missing_imports = true
 
 
 [tool.isort]

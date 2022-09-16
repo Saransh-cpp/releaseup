@@ -6,6 +6,7 @@ from releaseit.extract import (
     get_diff,
     preprocess_additions,
 )
+from releaseit.nlp_backend import generate_summary, get_tfid_scores
 
 
 def extract_release_comments(
@@ -24,12 +25,26 @@ def extract_release_comments(
             Path of the file to store the diff in.
 
     Returns:
-        docs:
+        comments:
             A list of comments and docstrings added in between the provided commits.
     """
     get_diff(commits, path, output_filename)
     extracted_additions = extract_additions(output_filename)
     preprocessed_additions = preprocess_additions(extracted_additions)
-    docs = get_comments_and_docstrings(preprocessed_additions)
+    comments = get_comments_and_docstrings(preprocessed_additions)
 
-    return docs
+    return comments
+
+
+def generate_release_notes(
+    comments: list[str],
+    output_filename: str = "RELEASE_NOTES.txt",
+    model_name: str = "en_core_web_trf",
+    threshold: float = 0.3,
+) -> list[str]:
+    word_score = get_tfid_scores(comments)
+    release_notes = generate_summary(
+        comments, word_score, output_filename, model_name, threshold
+    )
+
+    return release_notes
