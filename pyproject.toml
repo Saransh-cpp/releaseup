@@ -66,7 +66,7 @@ Changelog = "https://github.com/Saransh-cpp/releaseup/releases"
 
 [tool.hatch]
 version.source = "vcs"
-build.hooks.vcs.version-file = "src/releaseup/version.py"
+build.hooks.vcs.version-file = "./releaseup/version.py"
 
 
 [tool.pytest.ini_options]
@@ -101,7 +101,7 @@ profile = "black"
 
 [tool.pylint]
 master.py-version = "3.7"
-master.ignore-paths= ["src/releaseup/_version.py"]
+master.ignore-paths= ["./releaseup/_version.py"]
 reports.output-format = "colorized"
 similarities.ignore-imports = "yes"
 messages_control.disable = [

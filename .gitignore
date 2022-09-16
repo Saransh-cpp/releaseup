@@ -138,7 +138,7 @@ dmypy.json
 cython_debug/
 
 # setuptools_scm
-src/*/_version.py
+./*/_version.py
 
 # hatch vcs versioning
-src/*/version.py
+version.py

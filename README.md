@@ -59,7 +59,7 @@ For developer install, see our
 import releaseup
 
 tag = ["v0.8.0", "v0.9.0"]  # can also be commits
-path = "./src/mypackage/"  # to ignore changes made to other folders (./github/, docs/, etc) and files
+path = "././mypackage/"  # to ignore changes made to other folders (./github/, docs/, etc) and files
 comments_filename = "COMMENTS.txt"
 
 # extract added comments and docstrings
@@ -90,7 +90,7 @@ from releaseup.extract import (
 from releaseup.nlp_backend import get_release_notes, get_tfid_scores
 
 tag = ["v0.8.0", "v0.9.0"]  # can also be commits
-path = "./src/mypackage/"  # to ignore changes made to other folders (./github/, docs/, etc) and files
+path = "././mypackage/"  # to ignore changes made to other folders (./github/, docs/, etc) and files
 comments_filename = "COMMENTS.txt"
 
 # extract added comments and docstrings
