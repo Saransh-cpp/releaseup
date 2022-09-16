@@ -1,6 +1,6 @@
 # [Unreleased](https://github.com/Saransh-cpp/releaseup)
 
-- Remove `strict` `mkdocs` build
+- Fix documentation build
   ([#1](https://github.com/Saransh-cpp/releaseup/pull/1))
 
 # [v0.1.0](https://github.com/Saransh-cpp/releaseup/tree/v0.1.0)
