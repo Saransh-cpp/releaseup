@@ -1,6 +1,6 @@
 # Installation
 
-Follow the steps below to install `ReleaseIt` locally.
+Follow the steps below to install `releaseit` locally.
 
 ## Create a virtual environment
 
@@ -12,7 +12,7 @@ python -m venv env
 . env/bin/activate
 ```
 
-## Install ReleaseIt
+## Install releaseit
 
 - Install Tesseract for your OS and add it to PATH
 
@@ -21,15 +21,15 @@ The installation guide is available
 
 - `pip` magic
 
-`ReleaseIt` uses modern `Python` packaging and can be installed using `pip` -
+`releaseit` uses modern `Python` packaging and can be installed using `pip` -
 
 ```
 python -m pip install releaseit
 ```
 
-## Build ReleaseIt from source
+## Build releaseit from source
 
-If you want to develop `ReleaseIt`, or use its latest commit (!can be
+If you want to develop `releaseit`, or use its latest commit (!can be
 unstable!), you might want to install it from the source -
 
 - Install Tesseract for your OS and add it to PATH
@@ -40,13 +40,13 @@ The installation guide is available
 - Clone this repository
 
 ```bash
-git clone https://github.com/Saransh-cpp/ReleaseIt
+git clone https://github.com/Saransh-cpp/releaseit
 ```
 
 - Change directory
 
 ```bash
-cd ReleaseIt
+cd releaseit
 ```
 
 - Install the package in editable mode with the "dev" dependencies
@@ -56,5 +56,5 @@ python -m pip install -e ".[dev]"
 ```
 
 Feel free to read our
-[Contributing Guide](https://github.com/Saransh-cpp/ReleaseIt/blob/main/CONTRIBUTING.md)
-for more information on developing `ReleaseIt`.
+[Contributing Guide](https://github.com/Saransh-cpp/releaseit/blob/main/CONTRIBUTING.md)
+for more information on developing `releaseit`.

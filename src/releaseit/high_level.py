@@ -10,15 +10,15 @@ from releaseit.nlp_backend import get_release_notes, get_tfid_scores
 
 
 def extract_release_comments(
-    commits: list[str], path: str, output_filename: str
+    tags: list[str], path: str, output_filename: str
 ) -> list[str]:
     """
     A high-level API for extracting comments and docstrings added in between
-    2 (ideally 2) commits.
+    2 (ideally 2) tags or commits.
 
     Args:
-        commits:
-            A list of commits (ideally the latest 2).
+        tags:
+            A list of tags or commits (ideally 2 most recent) to find diff between.
         path:
             Path of the sub-directory to find the diff of.
         output_filename:
@@ -26,9 +26,9 @@ def extract_release_comments(
 
     Returns:
         comments:
-            A list of comments and docstrings added in between the provided commits.
+            A list of comments and docstrings added in between the provided tags.
     """
-    get_diff(commits, path, output_filename)
+    get_diff(tags, path, output_filename)
     extracted_additions = extract_additions(output_filename)
     preprocessed_additions = preprocess_additions(extracted_additions)
     comments = get_comments_and_docstrings(preprocessed_additions)
@@ -39,7 +39,7 @@ def extract_release_comments(
 def generate_release_notes(
     comments: list[str],
     output_filename: str = "RELEASE_NOTES.txt",
-    model_name: str = "en_core_web_trf",
+    model_name: str = "en_core_web_sm",
     threshold: float = 0.3,
 ) -> list[str]:
     word_score = get_tfid_scores(comments)

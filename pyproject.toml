@@ -11,7 +11,7 @@ name = "releaseit"
 authors = [
   { name = "Saransh Chopra", email = "saransh0701@gmail.com" },
 ]
-description = "Automatically generate release notes!"
+description = "An extractive approach for generating release notes from comments and docstrings added between two git tags"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -62,10 +62,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Saransh-cpp/ReleaseIt"
-"Bug Tracker" = "https://github.com/Saransh-cpp/ReleaseIt/issues"
-Discussions = "https://github.com/Saransh-cpp/ReleaseIt/discussions"
-Changelog = "https://github.com/Saransh-cpp/ReleaseIt/releases"
+Homepage = "https://github.com/Saransh-cpp/releaseit"
+"Bug Tracker" = "https://github.com/Saransh-cpp/releaseit/issues"
+Discussions = "https://github.com/Saransh-cpp/releaseit/discussions"
+Changelog = "https://github.com/Saransh-cpp/releaseit/releases"
 
 
 [tool.hatch]

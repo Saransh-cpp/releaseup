@@ -26,13 +26,13 @@ theme:
 # twitter_name: "@saranshchopra7"
 # twitter_url: "https://twitter.com/saranshchopra7"
 
-site_name: ReleaseIt
-site_description: Documentation for ReleaseIt
+site_name: releaseit
+site_description: Documentation for releaseit
 site_author: Saransh Chopra
 site_url: https://releaseit.readthedocs.io/
 
-repo_url: https://github.com/Saransh-cpp/ReleaseIt
-repo_name: Saransh-cpp/ReleaseIt
+repo_url: https://github.com/Saransh-cpp/releaseit
+repo_name: Saransh-cpp/releaseit
 edit_uri: ./edit/main/docs
 
 extra_css:

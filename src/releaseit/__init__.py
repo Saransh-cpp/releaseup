@@ -1,7 +1,7 @@
 """
 Copyright (c) 2022 Saransh Chopra. All rights reserved.
 
-ReleaseIt: Automatically generate release notes!
+releaseit: Automatically generate release notes!
 """
 
 

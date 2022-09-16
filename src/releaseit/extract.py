@@ -4,21 +4,21 @@ import subprocess
 
 
 def get_diff(
-    commits: list[str], path: str = "./", output_filename: str = "diff.txt"
+    tags: list[str], path: str = "./", output_filename: str = "diff.txt"
 ) -> None:
     """
     Writes `git diff` to a file.
 
     Args:
-        commits:
-            A list of commits (ideally 2 most recent) to find diff between.
+        tags:
+            A list of tags or commits (ideally 2 most recent) to find diff between.
         path:
             Path of the sub-directory to find the diff of.
         output_filename:
             Path of the file to store the diff in.
     """
     with open(output_filename, "w+") as f:
-        subprocess.run(["git", "diff", commits[0], commits[1], "--", path], stdout=f)
+        subprocess.run(["git", "diff", tags[0], tags[1], "--", path], stdout=f)
 
 
 def extract_additions(filename: str) -> list[str]:
