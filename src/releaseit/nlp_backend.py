@@ -25,7 +25,7 @@ def generate_summary(
     comments: list[str],
     word_score: dict[str, float],
     output_filename: str = "RELEASE_NOTES.txt",
-    model_name: str = "en_core_web_trf",
+    model_name: str = "en_core_web_sm",
     threshold: float = 0.3,
 ) -> list[str]:
     nlp = spacy.load(model_name)
