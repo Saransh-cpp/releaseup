@@ -1,4 +1,4 @@
-# release_it
+# releaseit
 
 ![release_it](https://user-images.githubusercontent.com/74055102/190672849-3d6886d1-558e-41cf-9e6d-a932f7de0997.png)
 
