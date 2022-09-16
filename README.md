@@ -1,5 +1,7 @@
 # releaseit
 
+![releaseit](https://user-images.githubusercontent.com/74055102/190672849-3d6886d1-558e-41cf-9e6d-a932f7de0997.png)
+
 [![CI](https://github.com/Saransh-cpp/releaseit/actions/workflows/ci.yml/badge.svg)](https://github.com/Saransh-cpp/releaseit/actions/workflows/ci.yml)
 [![Documentation Status](https://readthedocs.org/projects/releaseit/badge/?version=latest)](https://releaseit.readthedocs.io/en/latest/?badge=latest)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Saransh-cpp/releaseit/main.svg)](https://results.pre-commit.ci/latest/github/Saransh-cpp/releaseit/main)
@@ -10,7 +12,7 @@
 [![Package Version](https://badge.fury.io/py/releaseit.svg)](https://pypi.org/project/releaseit/)
 [![PyPI Downloads](https://pepy.tech/badge/releaseit)](https://pepy.tech/project/releaseit)
 ![License](https://img.shields.io/github/license/Saransh-cpp/releaseit?color=blue)
-[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/bl
+[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 An extractive `NLP` approach for generating release notes from comments and
 docstrings added between two git tags.
@@ -210,3 +212,7 @@ pull request is made or a push is made to the `main` branch.
 the configuration for `Read The Docs` is written in `YAML`, present in the
 `.readthedocs.yml` file. The CD runs every time a push is made to the `main`
 branch.
+
+## Credits
+
+Logo image credits: Taufik Ramadhan (taken from canva)
