@@ -2,16 +2,16 @@
 
 ![release_it](https://user-images.githubusercontent.com/74055102/190672849-3d6886d1-558e-41cf-9e6d-a932f7de0997.png)
 
-[![CI](https://github.com/Saransh-cpp/release_it/actions/workflows/ci.yml/badge.svg)](https://github.com/Saransh-cpp/release_it/actions/workflows/ci.yml)
+[![CI](https://github.com/Saransh-cpp/releaseit/actions/workflows/ci.yml/badge.svg)](https://github.com/Saransh-cpp/releaseit/actions/workflows/ci.yml)
 [![Documentation Status](https://readthedocs.org/projects/release_it/badge/?version=latest)](https://release_it.readthedocs.io/en/latest/?badge=latest)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Saransh-cpp/release_it/main.svg)](https://results.pre-commit.ci/latest/github/Saransh-cpp/release_it/main)
-[![codecov](https://codecov.io/gh/Saransh-cpp/release_it/branch/main/graph/badge.svg?token=L6ObHKhaZ7)](https://codecov.io/gh/Saransh-cpp/release_it)
-[![discussion](https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github)](https://github.com/Saransh-cpp/release_it/discussions)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Saransh-cpp/releaseit/main.svg)](https://results.pre-commit.ci/latest/github/Saransh-cpp/releaseit/main)
+[![codecov](https://codecov.io/gh/Saransh-cpp/releaseit/branch/main/graph/badge.svg?token=L6ObHKhaZ7)](https://codecov.io/gh/Saransh-cpp/releaseit)
+[![discussion](https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github)](https://github.com/Saransh-cpp/releaseit/discussions)
 
 [![Python Versions](https://img.shields.io/pypi/pyversions/release_it)](https://pypi.org/project/release_it/)
 [![Package Version](https://badge.fury.io/py/release_it.svg)](https://pypi.org/project/release_it/)
 [![PyPI Downloads](https://pepy.tech/badge/release_it)](https://pepy.tech/project/release_it)
-![License](https://img.shields.io/github/license/Saransh-cpp/release_it?color=blue)
+![License](https://img.shields.io/github/license/Saransh-cpp/releaseit?color=blue)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 An extractive `NLP` approach for generating release notes from comments and
@@ -50,7 +50,7 @@ python -m pip install release_it
 ```
 
 For developer install, see our
-[Contributing Guidelines](https://github.com/Saransh-cpp/release_it/blob/main/release_it).
+[Contributing Guidelines](https://github.com/Saransh-cpp/releaseit/blob/main/release_it).
 
 ## Examples
 
@@ -149,7 +149,7 @@ function, and the `.md` files enable us to render this documentation on
 `release_it` primarily uses [MkDocs](https://www.mkdocs.org/) and
 [mkdocstrings](https://mkdocstrings.github.io/) for rendering documentation on
 its website. The configuration file (`mkdocs.yml`) for `MkDocs` can be found
-[here](https://github.com/Saransh-cpp/release_it/blob/main/mkdocs.yml). The
+[here](https://github.com/Saransh-cpp/releaseit/blob/main/mkdocs.yml). The
 documentation is deployed on <https://readthedocs.io>
 [here](https://release_it.readthedocs.io/en/latest/).
 

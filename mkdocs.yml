@@ -31,8 +31,8 @@ site_description: Documentation for release_it
 site_author: Saransh Chopra
 site_url: https://release_it.readthedocs.io/
 
-repo_url: https://github.com/Saransh-cpp/release_it
-repo_name: Saransh-cpp/release_it
+repo_url: https://github.com/Saransh-cpp/releaseit
+repo_name: Saransh-cpp/releaseit
 edit_uri: ./edit/main/docs
 
 extra_css:

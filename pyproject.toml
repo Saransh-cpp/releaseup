@@ -58,10 +58,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Saransh-cpp/release_it"
-"Bug Tracker" = "https://github.com/Saransh-cpp/release_it/issues"
-Discussions = "https://github.com/Saransh-cpp/release_it/discussions"
-Changelog = "https://github.com/Saransh-cpp/release_it/releases"
+Homepage = "https://github.com/Saransh-cpp/releaseit"
+"Bug Tracker" = "https://github.com/Saransh-cpp/releaseit/issues"
+Discussions = "https://github.com/Saransh-cpp/releaseit/discussions"
+Changelog = "https://github.com/Saransh-cpp/releaseit/releases"
 
 
 [tool.hatch]

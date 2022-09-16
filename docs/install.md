@@ -40,7 +40,7 @@ The installation guide is available
 - Clone this repository
 
 ```bash
-git clone https://github.com/Saransh-cpp/release_it
+git clone https://github.com/Saransh-cpp/releaseit
 ```
 
 - Change directory
@@ -56,5 +56,5 @@ python -m pip install -e ".[dev]"
 ```
 
 Feel free to read our
-[Contributing Guide](https://github.com/Saransh-cpp/release_it/blob/main/CONTRIBUTING.md)
+[Contributing Guide](https://github.com/Saransh-cpp/releaseit/blob/main/CONTRIBUTING.md)
 for more information on developing `release_it`.

@@ -22,7 +22,7 @@ beneficial for reproducing bugs, and the overall development of `release_it`.
 The first step would be to clone `release_it` -
 
 ```
-git clone https://github.com/Saransh-cpp/release_it.git
+git clone https://github.com/Saransh-cpp/releaseit.git
 ```
 
 and then we can change the current working directory and enter `release_it` -
@@ -126,7 +126,7 @@ function, and the `.md` files enable us to render this documentation on
 `release_it` primarily uses [MkDocs](https://www.mkdocs.org/) and
 [mkdocstrings](https://mkdocstrings.github.io/) for rendering documentation on
 its website. The configuration file (`mkdocs.yml`) for `MkDocs` can be found
-[here](https://github.com/Saransh-cpp/release_it/blob/main/mkdocs.yml). The
+[here](https://github.com/Saransh-cpp/releaseit/blob/main/mkdocs.yml). The
 documentation is deployed on <https://readthedocs.io>
 [here](https://release_it.readthedocs.io/en/latest/).
 
