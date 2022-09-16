@@ -7,6 +7,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 def get_tfid_scores(comments: list[str]) -> dict[str, float]:
+    """
+    Extract TF-IDF scores for a list of strings.
+
+    Args:
+        comments:
+            Strings for the TF-IDF score.
+
+    Returns:
+        word_score:
+            A dict of words mapped to their TF-IDF scores.
+    """
     v = TfidfVectorizer()
     v.fit(comments)
     v.transform(comments)
@@ -21,13 +32,33 @@ def get_tfid_scores(comments: list[str]) -> dict[str, float]:
     return word_score
 
 
-def generate_summary(
+def get_release_notes(
     comments: list[str],
     word_score: dict[str, float],
     output_filename: str = "RELEASE_NOTES.txt",
     model_name: str = "en_core_web_sm",
     threshold: float = 0.3,
 ) -> list[str]:
+    """
+    Generate release_notes (or release notes) from the extracted
+    comments and TF-IDF scores.
+
+    Args:
+        comments:
+            A list of extracted comments.
+        word_score:
+            A dict of words mapped to their TF-IDF scores.
+        output_filename:
+            Path of the file where release notes are to be dumped.
+        model_name:
+            spacy's model name. See https://spacy.io/usage/models.
+        threshold:
+            Percentage of comments to be included in the release notes.
+
+    Returns:
+        release_notes:
+            Release notes a s a list of strings.
+    """
     nlp = spacy.load(model_name)
 
     comments_str = " ".join(comments).replace("\n", "")
@@ -44,10 +75,10 @@ def generate_summary(
                     sent_scores[sent] += word_score[word.text.lower()]
 
     select_length = int(len(sentences) * 0.3)
-    summary = nlargest(select_length, sent_scores, key=sent_scores.get)  # type: ignore[arg-type]
-    summary = [f"{sentence}\n" for sentence in summary]
+    release_notes = nlargest(select_length, sent_scores, key=sent_scores.get)  # type: ignore[arg-type]
+    release_notes = [f"{sentence}\n" for sentence in release_notes]
 
     with open(output_filename, "w+") as f:
-        f.writelines(summary)
+        f.writelines(release_notes)
 
-    return summary
+    return release_notes

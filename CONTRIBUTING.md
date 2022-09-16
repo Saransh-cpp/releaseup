@@ -180,19 +180,27 @@ mkdocs build
 
 ## Nox
 
-`ReleaseIt` supports running various critical commands using
-[nox](https://github.com/wntrblm/nox) to make them less intimidating for new
-developers. All of these commands (or sessions in the language of `nox`) -
-`lint`, `tests`, `doctests`, `docs`, and `build` - are defined in
-[noxfile.py](https://github.com/Saransh-cpp/ReleaseIt/blob/main/noxfile.py).
+# Quick development
 
-`nox` can be installed via `pip` using -
+The fastest way to start with development is to use nox. If you don't have nox,
+you can use `pipx run nox` to run it without installing, or `pipx install nox`.
+If you don't have pipx (pip for applications), then you can install with with
+`pip install pipx` (the only case were installing an application with regular
+pip is reasonable). If you use macOS, then pipx and nox are both in brew, use
+`brew install pipx nox`.
 
+To use, run `nox`. This will lint and test using every installed version of
+Python on your system, skipping ones that are not installed. You can also run
+specific jobs:
+
+```console
+$ nox -s lint  # Lint only
+$ nox -s tests-3.9  # Python 3.9 tests only
+$ nox -s docs -- serve  # Build and serve the docs
+$ nox -s build  # Make an SDist and wheel
 ```
-pip install nox
-```
 
-The default sessions (`lint`, `tests`, and `doctests`) can be executed using -
+The default sessions (`lint` and `tests`) can be executed using -
 
 ```
 nox

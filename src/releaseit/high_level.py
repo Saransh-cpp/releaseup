@@ -6,7 +6,7 @@ from releaseit.extract import (
     get_diff,
     preprocess_additions,
 )
-from releaseit.nlp_backend import generate_summary, get_tfid_scores
+from releaseit.nlp_backend import get_release_notes, get_tfid_scores
 
 
 def extract_release_comments(
@@ -43,7 +43,7 @@ def generate_release_notes(
     threshold: float = 0.3,
 ) -> list[str]:
     word_score = get_tfid_scores(comments)
-    release_notes = generate_summary(
+    release_notes = get_release_notes(
         comments, word_score, output_filename, model_name, threshold
     )
 
