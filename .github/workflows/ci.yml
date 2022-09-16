@@ -42,13 +42,23 @@ jobs:
       - name: Test package
         run: python -m pytest -ra --cov=releaseit
 
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v3.1.0
+
+  docs:
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
       - name: Build docs
         run: |
           python -m pip install .[docs,dev]
           mkdocs build
-
-      - name: Upload coverage report
-        uses: codecov/codecov-action@v3.1.0
 
   dist:
     name: Distribution build
