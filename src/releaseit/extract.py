@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import subprocess
-import sys
 
 
 def get_diff(
@@ -106,7 +105,6 @@ def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
     while i < len(extracted_docs):
         line = extracted_docs[i]
         if "noqa" in line or "type:" in line or line == "\n" or "todo" in line.lower():
-            print(line)
             extracted_docs.pop(i)
         else:
             i += 1
