@@ -1,34 +1,34 @@
 # Contributing guide
 
-If you are planning to develop `release_it`, or want to use the latest commit of
-`release_it` on your local machine, you might want to install it from the
-source. This installation is not recommended for users who want to use the
-stable version of `release_it`. The steps below describe the installation
-process of `release_it`'s latest commit. It also describes how to test
-`release_it`'s codebase and build `release_it`'s documentation.
+If you are planning to develop `releaseup`, or want to use the latest commit of
+`releaseup` on your local machine, you might want to install it from the source.
+This installation is not recommended for users who want to use the stable
+version of `releaseup`. The steps below describe the installation process of
+`releaseup`'s latest commit. It also describes how to test `releaseup`'s
+codebase and build `releaseup`'s documentation.
 
-**Note**: `release_it` uses
+**Note**: `releaseup` uses
 [Scikit-HEP's developer information](https://scikit-hep.org/developer) as a
 reference for all the development work. The guide is a general and much more
 explained collection of documentation available for developing `Scikit-HEP`
-packages. `release_it` is not a `Scikit-HEP` package, but it still loosely
+packages. `releaseup` is not a `Scikit-HEP` package, but it still loosely
 follows this developer guide as it is absolutely amazing!
 
-## Installing release_it
+## Installing releaseup
 
-We recommend using a virtual environment to install `release_it`. This would
+We recommend using a virtual environment to install `releaseup`. This would
 isolate the library from your global `Python` environment, which would be
-beneficial for reproducing bugs, and the overall development of `release_it`.
-The first step would be to clone `release_it` -
+beneficial for reproducing bugs, and the overall development of `releaseup`. The
+first step would be to clone `releaseup` -
 
 ```
-git clone https://github.com/Saransh-cpp/releaseit.git
+git clone https://github.com/Saransh-cpp/releaseup.git
 ```
 
-and then we can change the current working directory and enter `release_it` -
+and then we can change the current working directory and enter `releaseup` -
 
 ```
-cd release_it
+cd releaseup
 ```
 
 ### Creating a virtual environment
@@ -52,10 +52,10 @@ python -m venv .env
 
 ### Installation
 
-The developer installation of `release_it` comes with a lot of options -
+The developer installation of `releaseup` comes with a lot of options -
 
 - `test`: the test dependencies
-- `docs`: extra dependencies to build and develop `release_it`'s documentation
+- `docs`: extra dependencies to build and develop `releaseup`'s documentation
 - `dev`: installs the `test` and `docs` dependencies
 
 These options can be used with `pip` with the editable (`-e`) mode of
@@ -72,19 +72,19 @@ dependencies included above, use -
 pip install -e .[dev,test,docs]
 ```
 
-### Adding release_it for notebooks
+### Adding releaseup for notebooks
 
-`release_it` can be added to the notebooks using the following commands -
+`releaseup` can be added to the notebooks using the following commands -
 
 ```
-python -m ipykernel install --user --name release_it
+python -m ipykernel install --user --name releaseup
 ```
 
 ## Activating pre-commit
 
-`release_it` uses a set of `pre-commit` hooks and the `pre-commit` bot to
-format, type-check, and prettify the codebase. The hooks can be installed
-locally using -
+`releaseup` uses a set of `pre-commit` hooks and the `pre-commit` bot to format,
+type-check, and prettify the codebase. The hooks can be installed locally
+using -
 
 ```
 pre-commit install
@@ -111,32 +111,32 @@ The coverage value can be obtained while running the tests using `pytest-cov` in
 the following way -
 
 ```
-python -m pytest -ra --cov=release_it tests/
+python -m pytest -ra --cov=releaseup tests/
 ```
 
-## Documenting release_it
+## Documenting releaseup
 
-`release_it`'s documentation is mainly written in the form of
+`releaseup`'s documentation is mainly written in the form of
 [docstrings](https://peps.python.org/pep-0257/) and
 [Markdown](https://en.wikipedia.org/wiki/Markdown). The docstrings include the
 description, arguments, examples, return values, and attributes of a class or a
 function, and the `.md` files enable us to render this documentation on
-`release_it`'s documentation website.
+`releaseup`'s documentation website.
 
-`release_it` primarily uses [MkDocs](https://www.mkdocs.org/) and
+`releaseup` primarily uses [MkDocs](https://www.mkdocs.org/) and
 [mkdocstrings](https://mkdocstrings.github.io/) for rendering documentation on
 its website. The configuration file (`mkdocs.yml`) for `MkDocs` can be found
-[here](https://github.com/Saransh-cpp/releaseit/blob/main/mkdocs.yml). The
+[here](https://github.com/Saransh-cpp/releaseup/blob/main/mkdocs.yml). The
 documentation is deployed on <https://readthedocs.io>
-[here](https://release_it.readthedocs.io/en/latest/).
+[here](https://releaseup.readthedocs.io/en/latest/).
 
-Ideally, with the addition of every new feature to `release_it`, documentation
+Ideally, with the addition of every new feature to `releaseup`, documentation
 should be added using comments, docstrings, and `.md` files.
 
 ### Building documentation locally
 
 The documentation is located in the `docs` folder of the main repository. This
-documentation can be generated using the `docs` dependencies of `release_it` in
+documentation can be generated using the `docs` dependencies of `releaseup` in
 the following way -
 
 ```

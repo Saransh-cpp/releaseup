@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from release_it.extract import (
+from releaseup.extract import (
     extract_additions,
     get_comments_and_docstrings,
     get_diff,
     preprocess_additions,
 )
-from release_it.nlp_backend import get_release_notes, get_tfid_scores
+from releaseup.nlp_backend import get_release_notes, get_tfid_scores
 
 
 def extract_release_comments(
