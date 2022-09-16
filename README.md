@@ -27,7 +27,7 @@ intend to maintain it in the future. `releaseup` does work, but only if your
 comments are well written.
 
 Read more about `releaseup` through its
-[documentation](https://releaseup.readthedocs.io)
+[documentation](https://releaseup.readthedocs.io).
 
 ## Structure
 
