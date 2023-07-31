@@ -55,13 +55,13 @@ repos:
         args: ["-a", "from __future__ import annotations"] # Python 3.7+
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.9.0
+    rev: v3.10.1
     hooks:
       - id: pyupgrade
         args: ["--py37-plus"]
 
   - repo: https://github.com/hadialqattan/pycln
-    rev: v2.1.6
+    rev: v2.2.0
     hooks:
       - id: pycln
         additional_dependencies: [click<8.1]
@@ -78,7 +78,7 @@ repos:
           - flake8-print
 
   - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+    rev: 6.1.0
     hooks:
       - id: flake8
         exclude: docs/conf.py
