@@ -142,3 +142,5 @@ cython_debug/
 
 # hatch vcs versioning
 version.py
+
+.DS_Store

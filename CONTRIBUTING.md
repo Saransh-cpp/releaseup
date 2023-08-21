@@ -21,13 +21,13 @@ isolate the library from your global `Python` environment, which would be
 beneficial for reproducing bugs, and the overall development of `releaseup`. The
 first step would be to clone `releaseup` -
 
-```
+```bash
 git clone https://github.com/Saransh-cpp/releaseup.git
 ```
 
 and then we can change the current working directory and enter `releaseup` -
 
-```
+```bash
 cd releaseup
 ```
 
@@ -38,14 +38,14 @@ and `Windows` systems.
 
 **UNIX**:
 
-```
+```bash
 python3 -m venv .env
 . .env/bin/activate
 ```
 
 **Windows**:
 
-```
+```bash
 python -m venv .env
 .env\bin\activate
 ```
@@ -61,14 +61,14 @@ The developer installation of `releaseup` comes with a lot of options -
 These options can be used with `pip` with the editable (`-e`) mode of
 installation in the following ways -
 
-```
+```bash
 pip install -e .[dev,test]
 ```
 
 For example, if you want to install the `docs` dependencies along with the
 dependencies included above, use -
 
-```
+```bash
 pip install -e .[dev,test,docs]
 ```
 
@@ -76,7 +76,7 @@ pip install -e .[dev,test,docs]
 
 `releaseup` can be added to the notebooks using the following commands -
 
-```
+```bash
 python -m ipykernel install --user --name releaseup
 ```
 
@@ -86,7 +86,7 @@ python -m ipykernel install --user --name releaseup
 type-check, and prettify the codebase. The hooks can be installed locally
 using -
 
-```
+```bash
 pre-commit install
 ```
 
@@ -94,7 +94,7 @@ This would run the checks every time a commit is created locally. The checks
 will only run on the files modified by that commit, but the checks can be
 triggered for all the files using -
 
-```
+```bash
 pre-commit run --all-files
 ```
 
@@ -110,7 +110,7 @@ discussion, use the `--no-verify` option with `git commit`.
 The coverage value can be obtained while running the tests using `pytest-cov` in
 the following way -
 
-```
+```bash
 python -m pytest -ra --cov=releaseup tests/
 ```
 
@@ -139,7 +139,7 @@ The documentation is located in the `docs` folder of the main repository. This
 documentation can be generated using the `docs` dependencies of `releaseup` in
 the following way -
 
-```
+```bash
 mkdocs serve
 ```
 
@@ -147,7 +147,7 @@ The commands executed above will clean any existing documentation build, create
 a new build (in `./site/`), and serve it on your `localhost`. To just build the
 documentation, use -
 
-```
+```bash
 mkdocs build
 ```
 
@@ -164,7 +164,7 @@ To use, run `nox`. This will lint and test using every installed version of
 Python on your system, skipping ones that are not installed. You can also run
 specific jobs:
 
-```console
+```bash
 $ nox -s lint  # Lint only
 $ nox -s tests-3.9  # Python 3.9 tests only
 $ nox -s docs -- serve  # Build and serve the docs
@@ -173,7 +173,7 @@ $ nox -s build  # Make an SDist and wheel
 
 The default sessions (`lint` and `tests`) can be executed using -
 
-```
+```bash
 nox
 ```
 
@@ -181,7 +181,7 @@ nox
 
 The `pre-commit` hooks can be run with `nox` in the following way -
 
-```
+```bash
 nox -s lint
 nox -s pylint
 ```
@@ -190,7 +190,7 @@ nox -s pylint
 
 Tests can be run with `nox` in the following way -
 
-```
+```bash
 nox -s tests
 ```
 
@@ -198,12 +198,12 @@ nox -s tests
 
 Docs can be built with `nox` in the following way -
 
-```
+```bash
 nox -s docs
 ```
 
 Use the following command if you want to deploy the docs on `localhost` -
 
-```
+```bash
 nox -s docs -- serve
 ```
