@@ -63,9 +63,7 @@ path = "././mypackage/"  # to ignore changes made to other folders (./github/, d
 comments_filename = "COMMENTS.txt"
 
 # extract added comments and docstrings
-comments = releaseup.extract_release_comments(
-    tags, path, comments_filename
-)
+comments = releaseup.extract_release_comments(tags, path, comments_filename)
 
 release_filename = "RELEASE_NOTES.txt"
 
@@ -73,8 +71,8 @@ release_filename = "RELEASE_NOTES.txt"
 notes = releaseup.generate_release_notes(
     comments,
     release_filename,
-    model_name = "en_core_web_trf",  # any spacy model
-    threshold = 0.3,  # percentage of comments to be selected
+    model_name="en_core_web_trf",  # any spacy model
+    threshold=0.3,  # percentage of comments to be selected
 )
 ```
 
@@ -106,8 +104,8 @@ release_notes = get_release_notes(
     comments,
     word_score,
     release_filename,
-    model_name = "en_core_web_trf",  # any spacy model
-    threshold = 0.3,  # percentage of comments to be selected
+    model_name="en_core_web_trf",  # any spacy model
+    threshold=0.3,  # percentage of comments to be selected
 )
 ```
 
