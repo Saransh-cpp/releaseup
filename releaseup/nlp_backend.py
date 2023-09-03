@@ -75,7 +75,9 @@ def get_release_notes(
                     sent_scores[sent] += word_score[word.text.lower()]
 
     select_length = int(len(sentences) * 0.3)
-    release_notes = nlargest(select_length, sent_scores, key=sent_scores.get)  # type: ignore[arg-type]
+    release_notes = nlargest(
+        select_length, sent_scores, key=sent_scores.get
+    )  # type: ignore[arg-type]
     release_notes = [f"{sentence}\n" for sentence in release_notes]
 
     with open(output_filename, "w+") as f:

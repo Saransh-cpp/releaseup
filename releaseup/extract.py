@@ -87,10 +87,22 @@ def get_comments_and_docstrings(preprocessed_additions: list[str]) -> list[str]:
     while i < len(lines):
         if lines[i : i + 3] == '"""':
             idx_next_quotes = lines[i + 3 :].find('"""')
-            # args = lines[i + 3 :].find('Args:') if lines[i + 3 :].find('Args:') != -1 else sys.maxsize
-            # returns = lines[i + 3 :].find('Returns:') if lines[i + 3 :].find('Returns:') != -1 else sys.maxsize
-            # examples = lines[i + 3 :].find('Examples:') if lines[i + 3 :].find('Examples:') != -1 else sys.maxsize
-            # idx = min(args, returns, examples)
+            # args = (
+            #     lines[i + 3 :].find("Args:")
+            #     if lines[i + 3 :].find("Args:") != -1
+            #     else sys.maxsize
+            # )
+            # returns = (
+            #     lines[i + 3 :].find("Returns:")
+            #     if lines[i + 3 :].find("Returns:") != -1
+            #     else sys.maxsize
+            # )
+            # examples = (
+            #     lines[i + 3 :].find("Examples:")
+            #     if lines[i + 3 :].find("Examples:") != -1
+            #     else sys.maxsize
+            # )
+            # min(args, returns, examples)
             # if idx != sys.maxsize:
             comments_and_docstrings.append(lines[i + 3 : i + idx_next_quotes + 3])
             i += idx_next_quotes + 6
