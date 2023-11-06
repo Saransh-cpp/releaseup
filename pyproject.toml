@@ -70,6 +70,18 @@ build.hooks.vcs.version-file = "./releaseup/version.py"
 [tool.isort]
 profile = "black"
 
+[tool.pylint]
+master.py-version = "3.7"
+master.ignore-paths= ["./releaseup/_version.py"]
+reports.output-format = "colorized"
+similarities.ignore-imports = "yes"
+messages_control.disable = [
+  "design",
+  "fixme",
+  "line-too-long",
+  "wrong-import-position",
+]
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
@@ -93,15 +105,3 @@ show_error_codes = true
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 warn_unreachable = true
 ignore_missing_imports = true
-
-[tool.pylint]
-master.py-version = "3.7"
-master.ignore-paths= ["./releaseup/_version.py"]
-reports.output-format = "colorized"
-similarities.ignore-imports = "yes"
-messages_control.disable = [
-  "design",
-  "fixme",
-  "line-too-long",
-  "wrong-import-position",
-]
