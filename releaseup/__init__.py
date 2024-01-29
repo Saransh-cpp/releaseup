@@ -4,7 +4,6 @@ Copyright (c) 2022 Saransh Chopra. All rights reserved.
 releaseup: Automatically generate release notes!
 """
 
-
 from __future__ import annotations
 
 from releaseup import extract  # noqa: F401
