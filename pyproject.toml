@@ -60,6 +60,7 @@ urls."Bug Tracker" = "https://github.com/Saransh-cpp/releaseup/issues"
 urls.Changelog = "https://github.com/Saransh-cpp/releaseup/releases"
 urls.Discussions = "https://github.com/Saransh-cpp/releaseup/discussions"
 urls.Homepage = "https://github.com/Saransh-cpp/releaseup"
+
 [tool.hatch]
 version.source = "vcs"
 build.hooks.vcs.version-file = "./releaseup/version.py"
